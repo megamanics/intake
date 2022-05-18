@@ -1,0 +1,224 @@
+name: '⁉️ Global Services Scoping Form'
+description: This issue template is designed to capture the outcomes of a Expert Services opportunity and/or discovery meeting with a customer
+title: '[Customer]: Global Services Scoping Form'
+labels:
+  - 👥 ps-delivery
+
+body:
+  - type: markdown
+    attributes:
+      value: '# Instructions'
+  - type: markdown
+    attributes:
+      value: |
+        1. Please enter the outcomes of the Expert Services Discovery meeting with the customer.
+        2. Please also answer the facilitating questions to provide context for the subsequent scoping call.
+        3. A detailed entry will trigger a scoping call with a member of the Expert Services team within region.
+  - type: markdown
+    attributes:
+      value: '# GitHub Details'
+  - type: dropdown
+    attributes:
+      label: Regional Director
+      description: Name of the Regional Director Responsible
+      multiple: false
+      options:
+        - '@aaronkowall - Corp/Mid-Market'
+        - '@bval - AMER East'
+        - '@bdubwalker - AMER Central'
+        - '@naval-gupta - AMER West'
+        - '@bdubwalker - PubSec'
+        - '@samuelabdelsayed - APAC'
+        - '@umatty - EMEA'
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: Contract Type
+      description: Type of the contract for the required services
+      multiple: false
+      options:
+        - 'Premier'
+        - 'MCS'
+        - 'Direct'
+        - 'Partner'
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: Services Sales Representative
+      description: Name of the Services Sales Representative Responsible
+      multiple: false
+      options:
+        - '@armosher - Corp/Mid-Market'
+        - '@sleepysam - Corp/Mid-Market'
+        - '@tclapp1031 - AMER East'
+        - '@tykelly - AMER Central'
+        - '@tykelly / @jpietrocarlo - AMER West'
+        - '@christyherrington - PubSec'
+        - '@stenousis - EMEA'
+        - '@rufusfeltham - APAC'
+        - '@medovix - EMEA & APAC'
+    validations:
+      required: true
+  - type: input
+    id: account-manager
+    attributes:
+      label: Account Manager
+      description: Name of the Customer's Account Manager
+      placeholder: eg. @accountmanager-handle
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: Project Manager
+      description: Name of the Project Manager Responsible
+      multiple: false
+      options:
+        - '@karlwithak1 - AMER East'
+        - '@dmirnic - AMER Central'
+        - '@ricardow58 - AMER West'
+        - '@selkins13 - PubSec'
+        - '@donthescot - APAC'
+        - '@delgadito - EMEA'
+    validations:
+      required: false
+  - type: input
+    id: solution-engineer
+    attributes:
+      label: Solution Engineer
+      description: Name of the Customer's Solution Engineer
+      placeholder: eg. @solution-engineer-handle
+    validations:
+      required: false
+  - type: input
+    id: cam
+    attributes:
+      label: CAM
+      description: Name of the Customer's CAM
+      placeholder: eg. @CAM-handle
+    validations:
+      required: false
+  - type: input
+    id: csam
+    attributes:
+      label: CSAM
+      description: Name of the Customer's CSAM
+      placeholder: eg. @CSAM-handle
+    validations:
+      required: false
+  - type: input
+    id: delivery-partner
+    attributes:
+      label: Delivery Partner
+      description: Name of the Customer's Delivery Partner
+      placeholder: eg. @delivery-partner-handle
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: '# Customer Details'
+  - type: input
+    id: account-name
+    attributes:
+      label: Account Name
+      description: Customer account name
+      placeholder: eg. Customer Name
+    validations:
+      required: true
+  - type: input
+    id: account-contact
+    attributes:
+      label: Customer Contact
+      description: Customer contact (First Name, Last Name)
+      placeholder: eg. Just Doe
+    validations:
+      required: true
+  - type: input
+    id: account-email
+    attributes:
+      label: Customer Email Address
+      description: Customer contact's email address
+      placeholder: eg. justdoe@unknown.com
+    validations:
+      required: true
+  - type: input
+    id: account-timezone
+    attributes:
+      label: Customer Time Zone
+      description: Customer operating time zone
+      placeholder: eg. EST, CET, IST
+    validations:
+      required: true
+  - type: input
+    id: account-services-repo-issue
+    attributes:
+      label: Main Engagement Issue
+      description: Provide the SFDC opportunity link
+      placeholder: eg. https://github.lightning.force.com/lightning/r/Opportunity/0063o0000149mSDAAY/view
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: '# Enterprise Foundation'
+  - type: checkboxes
+    id: implementation
+    attributes:
+      label: Implementation
+      description: Which platform does the customer need?
+      options:
+        - label: GHES
+        - label: GHEC
+        - label: GHEC + EMU
+        - label: GHAE
+  - type: dropdown
+    id: migrations
+    attributes:
+      label: Migrations
+      description: Does the customer need migration services?
+      multiple: false
+      options:
+        - 'Yes'
+        - 'No'
+  - type: checkboxes
+    id: training
+    attributes:
+      label: Training
+      description: Does the customer need any of the following training?
+      options:
+        - label: Implementation (GHES/GHEC)
+        - label: Administrator Training
+        - label: GitHub for Developers
+        - label: GitHub for Non-Developers
+  - type: markdown
+    attributes:
+      value: '# Additional Questions'
+  - type: checkboxes
+    id: additional_scoping_questions
+    attributes:
+      label: Please use any of the following slash command to complete. 
+      description: Note! This will need to be done after submitting the issue, as a issue comment
+      options:
+        - label: Use `/cicd` for CI/CD Questions
+        - label: Use `/collab_community` for Collaboration and Community Questions
+        - label: Use `/gh_accelerator` for Github Accelerator Questions
+        - label: Use `/migrations_scoping` for Migrations and Scoping Questions
+        - label: Use `/security_compliance` for Security & Compliance Questions
+  - type: markdown
+    attributes:
+      value: '# Context or Notes'
+  - type: textarea
+    id: add-context
+    attributes:
+      label: General Remarks
+  - type: markdown
+    attributes:
+      value: '# Next Steps'
+  - type: checkboxes
+    id: next-steps
+    attributes:
+      label: Action Items
+      options:
+        - label: 'Solution Architect Assigned'
+        - label: 'Delivery Engineer Assigned'
+        - label: 'Schedule Scoping Call'
