@@ -1,0 +1,16 @@
+name: Move Issue to Project
+on:
+  issues:
+    types:
+      - created
+jobs:
+  remove_labels:
+    if: contains(github.event.issue.name, 'Scoping Form')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add To GitHub Projects Beta
+        uses: actions/add-to-project@v0.0.3
+        with:
+          # URL of the project to add issues to
+          project-url: https://github.com/users/megamanics/projects/1 
+          github-token: ${{ secrets.GITHUB_TOKEN }}
