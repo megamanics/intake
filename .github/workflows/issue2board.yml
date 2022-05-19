@@ -13,5 +13,4 @@ jobs:
         uses: actions/add-to-project@v0.0.3
         with:
           # URL of the project to add issues to
-          project-url: megamanics/projects/1 
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          project-url: https://github.com/users/megamanics/projects/1
