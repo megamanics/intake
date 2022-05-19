@@ -5,8 +5,8 @@ on:
       - created
   workflow_dispatch: {}    
 jobs:
-  remove_labels:
-    if: contains(github.event.issue.name, 'Scoping Form')
+  addIssueToProject:
+    #if: contains(github.event.issue.name, 'Scoping Form')
     runs-on: ubuntu-latest
     steps:
       - name: Add To GitHub Projects Beta
