@@ -14,4 +14,4 @@ jobs:
         with:
           # URL of the project to add issues to
           project-url: https://github.com/users/megamanics/projects/1
-          repo-token: ${{ secrets.TOKEN }}
+          github-token: ${{ secrets.TOKEN }}
