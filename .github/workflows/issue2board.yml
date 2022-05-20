@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Add To GitHub Projects Beta
-        uses: megamanics/add-to-project@0.0.2
+        uses: actions/add-to-project@main
         with:
           # URL of the project to add issues to
           project-url: https://github.com/devops-testbed/intake/projects/1
