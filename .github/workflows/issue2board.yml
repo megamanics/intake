@@ -1,5 +1,6 @@
 name: Move Issue to Project
 on:
+  pull_request:
   issues:
     types:
       - created
