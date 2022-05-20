@@ -13,5 +13,5 @@ jobs:
         uses: actions/add-to-project@v0.0.3
         with:
           # URL of the project to add issues to
-          project-url: https://github.com/megamanics/intake/projects/1
+          project-url: https://github.com/devops-testbed/intake/projects/1
           github-token: ${{ secrets.GITHUB_TOKEN }}
