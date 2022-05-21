@@ -3,7 +3,7 @@ on:
   pull_request:
   issues:
     types:
-      - created
+      - opened
   workflow_dispatch: {}    
 jobs:
   addIssueToProject:
