@@ -1,4 +1,4 @@
-name: Move Issue to Project
+name: Move Repo Issue to Org Project - Legacy
 on:
   pull_request:
   issues:
@@ -10,6 +10,10 @@ jobs:
     #if: contains(github.event.issue.name, 'Scoping Form')
     runs-on: ubuntu-latest
     steps:
+      - name: Print GitHub event context
+        env:
+          GH_EVENT: ${{ toJson(github.event) }}
+        run: echo "$GH_EVENT"
       - name: Add To GitHub Projects Beta
         uses: megamanics/add-to-project@main
         with:
