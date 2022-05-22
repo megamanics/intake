@@ -6,7 +6,7 @@ on:
   workflow_dispatch: {}    
 jobs:
   addIssueToGlobalProject:
-    if: contains(github.event.issue.name, 'Scoping Form')
+    if: contains(github.event.issue.title, 'Scoping Form')
     runs-on: ubuntu-latest
     steps:
       - name: Print GitHub event context
