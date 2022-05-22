@@ -17,8 +17,12 @@ jobs:
         with:
           # URL of the project to add issues to
           # outside https://github.com/orgs/github/projects/6144
-          project-url: https://github.com/orgs/github/projects/6144
+          project-url:  https://github.com/users/megamanics/projects/1
           github-token: ${{ secrets.GITHUB_TOKEN }}
+  createCardToGlobalProject:
+    if: contains(github.event.issue.title, 'Scoping Form')
+    runs-on: ubuntu-latest
+    steps:
       - name: Move issue
         uses: actions/github-script@v6
         with:
@@ -31,16 +35,16 @@ jobs:
               {id:  2,  columnName: "ToDo", projectName: "kanban", match: ({title})  => title.toLowerCase().match(/.*ooo.*/) !== null },
               {id:  3,  columnName: "ToDo", projectName: "kanban",    match: _ => true},
             ]
-            
+
             function determineProjectColumn(params) {
               return prjColumns.find(e => e.match(params))
             }
-            
+
             console.log("Determining appropriate board for issue number " + issue.number)
             const column = determineProjectColumn({labels: issue.labels.map(label => label.name),  title: issue.title})
-            
+
             console.log("Attempting to add issue " + issue.number + " to \"" + column.columnName + "\" on \"" + column.projectName + "\" (" + column.id + ")")
-            
+
             try {
               await github.rest.projects.createCard({
                 column_id: column.id,
