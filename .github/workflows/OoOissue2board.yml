@@ -1,11 +1,11 @@
-name: Move Issue to Project
+name: Move OoO Issue to Project
 on:
   issues:
     types:
       - opened
   workflow_dispatch: {}    
 jobs:
-  addIssueToProject:
+  addOoOIssueToProject:
     if: contains(github.event.issue.title, 'OoO')
     runs-on: ubuntu-latest
     steps:
