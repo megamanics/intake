@@ -19,11 +19,11 @@ jobs:
           # URL of the project to add issues to
           # outside https://github.com/orgs/github/projects/6144
           project-url: https://github.com/orgs/github/projects/6144
-          github-token: ${{ secrets.TOKEN1 }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Move issue
         uses: actions/github-script@v6
         with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
+          github-token: ${{secrets.TOKEN1}}
           previews: 'inertia' # required for Projects API
           script: |
             const issue = context.payload.issue
