@@ -1,6 +1,5 @@
 name: Move Repo Issue to Org Project - Legacy
 on:
-  pull_request:
   issues:
     types:
       - opened
