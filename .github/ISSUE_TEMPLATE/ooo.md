@@ -1,9 +1,9 @@
 ---
 name: OoO Issue
 about: OoO dates
-title: ''
+title: 'OoO: dates'
 labels: ''
-assignees: ''
+assignees: '@megamanics'
 
 ---
 
