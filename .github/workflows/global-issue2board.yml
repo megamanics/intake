@@ -2,7 +2,7 @@ name: Move Repo Issue to Org Project - Legacy
 on:
   issues:
     types:
-      - [ "opened", "reopened" ]
+      - [ opened, reopened ]
   workflow_dispatch: {}    
 jobs:
   addIssueToGlobalProject:
