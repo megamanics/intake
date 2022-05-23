@@ -15,6 +15,7 @@ jobs:
       - name: Add To GitHub Projects Beta
         uses: megamanics/add-to-project@main
         with:
+          previews: 'inertia'
           # outside https://github.com/orgs/github/projects/6144
           # https://github.com/orgs/devops-testbed/projects/1
           project-url:  https://github.com/users/megamanics/projects/1
@@ -26,6 +27,7 @@ jobs:
       - name: Add To devops-testbed Projects Beta
         uses: megamanics/add-to-project@main
         with:
+          previews: 'inertia'
           project-url:  https://github.com/orgs/devops-testbed/projects/1
           github-token: ${{ secrets.TOKEN1 }}
   addIssueToGHOrgProject:
@@ -35,6 +37,7 @@ jobs:
       - name: Add To GitHub Projects Beta
         uses: megamanics/add-to-project@main
         with:
+          previews: 'inertia'
           project-url:  https://github.com/orgs/github/projects/6144
           github-token: ${{ secrets.TOKEN1 }}
   createCardToGlobalProject:
@@ -44,7 +47,7 @@ jobs:
       - name: Move issue
         uses: actions/github-script@v6
         with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
+          github-token: ${{secrets.TOKEN1}}
           previews: 'inertia' # required for Projects API
           script: |
             const issue = context.payload.issue
