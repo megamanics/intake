@@ -15,9 +15,27 @@ jobs:
       - name: Add To GitHub Projects Beta
         uses: megamanics/add-to-project@main
         with:
-          # URL of the project to add issues to
           # outside https://github.com/orgs/github/projects/6144
+          # https://github.com/orgs/devops-testbed/projects/1
           project-url:  https://github.com/users/megamanics/projects/1
+          github-token: ${{ secrets.TOKEN1 }}
+  addIssueToOrgProject:
+    if: contains(github.event.issue.title, 'Scoping Form')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add To devops-testbed Projects Beta
+        uses: megamanics/add-to-project@main
+        with:
+          project-url:  https://github.com/orgs/devops-testbed/projects/1
+          github-token: ${{ secrets.TOKEN1 }}
+  addIssueToGHOrgProject:
+    if: contains(github.event.issue.title, 'Scoping Form')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add To GitHub Projects Beta
+        uses: megamanics/add-to-project@main
+        with:
+          project-url:  https://github.com/orgs/github/projects/6144
           github-token: ${{ secrets.TOKEN1 }}
   createCardToGlobalProject:
     if: contains(github.event.issue.title, 'Scoping Form')
