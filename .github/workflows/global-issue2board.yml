@@ -49,9 +49,9 @@ jobs:
           script: |
             const issue = context.payload.issue
             const prjColumns = [
-              {id:  1,  columnName: "ToDo", projectName: "intake", match: ({labels}) => labels.includes("scoping")},
-              {id:  2,  columnName: "ToDo", projectName: "kanban", match: ({title})  => title.toLowerCase().match(/.*ooo.*/) !== null },
-              {id:  3,  columnName: "ToDo", projectName: "kanban",    match: _ => true},
+              {id:  14473503,  columnName: "ToDo", projectName: "intake", match: ({labels}) => labels.includes("scoping")},
+              {id:  14477859,  columnName: "ToDo", projectName: "kanban", match: ({title})  => title.toLowerCase().match(/.*ooo.*/) !== null },
+              {id:  14479798,  columnName: "ToDo", projectName: "kanban", match: _ => true},
             ]
 
             function determineProjectColumn(params) {
