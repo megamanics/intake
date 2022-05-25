@@ -1,4 +1,4 @@
-name: '⁉️ Scoping Form'
+name: 'Scoping Form'
 description: This issue template is designed to capture the outcomes.
 title: '[Customer]: Scoping Form'
 labels:
@@ -10,7 +10,7 @@ body:
       description: Name Responsible
       multiple: false
       options:
+        - '@ricardow58'
         - '@megamanics'
-        - '@vinayski'
     validations:
       required: true
