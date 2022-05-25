@@ -4,7 +4,7 @@ on:
     types: [opened, reopened, labeled, milestoned]
   workflow_dispatch: {}    
 jobs:
-  addIssueToGlobalProject:
+  addIssueToUserProject:
     if: contains(github.event.issue.title, 'Scoping Form')
     runs-on: ubuntu-latest
     steps:
@@ -12,7 +12,7 @@ jobs:
         env:
           GH_EVENT: ${{ toJson(github.event) }}
         run: echo "$GH_EVENT"
-      - name: Add To GitHub Projects Beta
+      - name: Add To User Projects Beta - users/megamanics/projects/1
         uses: megamanics/add-to-project@main
         with:
           previews: 'inertia'
@@ -24,7 +24,7 @@ jobs:
     if: contains(github.event.issue.title, 'Scoping Form')
     runs-on: ubuntu-latest
     steps:
-      - name: Add To devops-testbed Projects Beta
+      - name: Add To devops-testbed Projects Beta - orgs/devops-testbed/projects/1
         uses: megamanics/add-to-project@main
         with:
           previews: 'inertia'
@@ -34,7 +34,7 @@ jobs:
     if: contains(github.event.issue.title, 'Scoping Form')
     runs-on: ubuntu-latest
     steps:
-      - name: Add To GitHub Projects Beta
+      - name: Add To GitHub Org Projects Beta - orgs/github/projects/6144
         uses: megamanics/add-to-project@main
         with:
           previews: 'inertia'
@@ -44,7 +44,7 @@ jobs:
     if: contains(github.event.issue.title, 'Scoping Form')
     runs-on: ubuntu-latest
     steps:
-      - name: Move issue
+      - name: Create Cards - Old Project
         uses: actions/github-script@v6
         with:
           github-token: ${{secrets.TOKEN1}}
